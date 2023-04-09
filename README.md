@@ -32,6 +32,6 @@ The data is being exposed through an API.
 
 `https://mixfam-api.airrnot.workers.dev/api/v1/periods`
 
-#### LICENSE
+## LICENSE
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/airRnot1106/mixfam-recorder/blob/main/LICENSE) file for details.
