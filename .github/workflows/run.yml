@@ -1,0 +1,30 @@
+name: Run Rust
+
+on:
+  push:
+    branches:
+      - develop
+  schedule:
+    - cron: "0 11 * * 2"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Run main.rs
+        run: cargo run --release
+
+  schedule_cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete old builds
+        run: rm -rf target
